@@ -9,7 +9,8 @@ void    swap_top(t_list **top)
     {
         first = (*top);
         second = first->next;
-        top = &second;
+        first->next = second->next;
         second->next = first;
+        *top = second;
     }
 }

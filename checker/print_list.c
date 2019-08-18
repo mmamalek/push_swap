@@ -1,4 +1,5 @@
 #include "checker.h"
+#include "../libft/libft.h"
 
 void print_list(t_list *list)
 {
@@ -8,4 +9,6 @@ void print_list(t_list *list)
         ft_nl();
         list = list->next;
     }
+    ft_nl();
+
 }

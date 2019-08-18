@@ -15,6 +15,6 @@ void    rotate_down(t_list **list)
         last = second_last->next;
         second_last->next = NULL;
         last->next = first;
-        list = &last;
+        *list = last;
     }
 }

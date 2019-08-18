@@ -2,9 +2,11 @@
 
 void	list_del_node(t_list **node)
 {
+    t_list *tmp;
     if (node && *node)
     {
-        free (*node);
-        *node = NULL;
+        tmp = *node;
+        free(tmp);
+        (*node) = NULL;
     }
 }
