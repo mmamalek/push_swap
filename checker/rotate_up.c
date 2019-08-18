@@ -1,20 +1,20 @@
 #include "checker.h"
 
-void    rotate_up(t_list **list)
+void    rotate_up(t_list **head)
 {
     t_list *first;
+    t_list *second;
     t_list *last;
-    t_list *second_last;
 
-    if (list && *list && (*list)->next)
+    if (head && *head && (*head)->next)
     {
-        first = *list;
-        second_last = first;
-        while (second_last->next->next)
-            second_last = second_last->next;
-        last = second_last->next;
-        second_last->next = NULL;
+        first = *head;
+        second = first->next;
+        last = second;
+        while (last->next)
+            last = last->next;
         last->next = first;
-        list = &last;
+        first->next = NULL;
+        head = &second;
     }
 }
