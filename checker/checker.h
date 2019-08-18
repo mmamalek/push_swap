@@ -12,20 +12,26 @@
 
 #ifndef CHECKER_H
 # define CHECKER_H
+# include <unistd.h>
+# include <stdlib.h>
 
 # include "../libft/libft.h"
 
-typedef struct int_list
+typedef struct list
 {
-	int		data;
+	int			data;
 	struct list *next;
-	struct list *prev;
-}				t_int_list;
+}				t_list;
 
-t_int_list		new_int_node(int data);
-void			del_int_node(t_int_list **node);
-void			del_int_list(t_int_list **list);
+t_list			*list_new_node(int data);
+void			list_del_node(t_list **node);
+void			list_delete(t_list **list);
+void			list_add_node_start(t_list **list, t_list *node);
+void			list_add_node_last(t_list **list, t_list *node);
+void			print_list(t_list *list);
+
+void			swap_top(t_list **top);
+void			rotate_up(t_list **head);
+void			rotate_down(t_list **head);
 
 #endif
-
-

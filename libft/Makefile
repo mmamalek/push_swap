@@ -66,13 +66,6 @@ SRC = ft_memset.c\
 	  ft_putnbr_ft.c\
 	  ft_putchar_fd.c\
 	  ft_isspace.c\
-	  ft_lstnew.c\
-	  ft_lstdelone.c\
-	  ft_lstdel.c\
-	  ft_lstadd.c\
-	  ft_lstiter.c\
-	  ft_lstmap.c\
-	  ft_lstaddlast.c\
 	  ft_strrealloc.c\
 	  ft_nl.c\
 	  ft_print_hex.c
@@ -130,13 +123,6 @@ OBJ = ft_memset.o \
 	  ft_putnbr_fd.o\
 	  ft_putchar_fd.o\
 	  ft_isspace.o\
-	  ft_lstnew.o\
-	  ft_lstdelone.o\
-	  ft_lstdel.o\
-	  ft_lstadd.o\
-	  ft_lstiter.o\
-	  ft_lstmap.o\
-	  ft_lstaddlast.o\
 	  ft_strrealloc.o\
 	  ft_nl.o\
 	  ft_print_hex.o
