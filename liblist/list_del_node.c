@@ -1,4 +1,4 @@
-#include "checker.h"
+#include "liblist.h"
 
 void	list_del_node(t_list **node)
 {

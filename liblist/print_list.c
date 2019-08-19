@@ -1,4 +1,4 @@
-#include "checker.h"
+#include "liblist.h"
 #include "../libft/libft.h"
 
 void print_list(t_list *list)

@@ -1,4 +1,4 @@
-#include "checker.h"
+#include "liblist.h"
 
 void	list_delete(t_list **list)
 {
