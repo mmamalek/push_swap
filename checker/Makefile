@@ -11,7 +11,9 @@ SRC  = 	checker.c \
 		read_list.c \
  		rotate_down.c \
 		rotate_up.c \
-		swap_top.c
+		swap_top.c \
+		list_len.c \
+		print_ab.c
 
 OBJ  = 	checker.o \
 		list_add_node_last.o \
@@ -24,7 +26,9 @@ OBJ  = 	checker.o \
 		read_list.o \
  		rotate_down.o \
 		rotate_up.o \
-		swap_top.o
+		swap_top.o \
+		list_len.o \
+		print_ab.o
 
 CC 	=	gcc
 CFLAGS= -Wall -Wextra -Werror

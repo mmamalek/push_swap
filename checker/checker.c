@@ -2,6 +2,8 @@
 #include "../libft/libft.h"
 #include "../get_next_line/get_next_line.h"
 
+static void    perform_task(char *op, t_list **stack_a,t_list **stack_b);
+
 int main(int ac, char **av)
 {
     t_list *stack_a;
@@ -15,45 +17,43 @@ int main(int ac, char **av)
         while (1)
         {
             get_next_line(STDIN_FILENO, &input);
-            if (ft_strequ(input, "quit"))
+            if (ft_strequ(input, "quit") || ft_strequ(input, "done"))
                 break;
             else
                 perform_task(input, &stack_a, &stack_b);
             input = NULL;
         }
+        //run_last_test(stack_a, stack_b, av);
     }
     return (0);
 }
 
-void    perform_task(char *op, t_list **stack_a,t_list **stack_b)
+static void    perform_task(char *op, t_list **stack_a,t_list **stack_b)
 {
     if (ft_strequ(op, "sa"))
-    {    sa(stack_a);}
+        sa(stack_a);
     if (ft_strequ(op, "sb"))
-    {    sb(stack_b);}
+        sb(stack_b);
     if (ft_strequ(op, "ss"))
-    {    ss(stack_a, stack_b);}
+        ss(stack_a, stack_b);
     if (ft_strequ(op, "pa"))
-    {    pa(stack_a, stack_b);}
+        pa(stack_a, stack_b);
     if (ft_strequ(op, "pb"))
-    {    pb(stack_a, stack_b);}
+        pb(stack_a, stack_b);
     if (ft_strequ(op, "ra"))
-    {    ra(stack_a);}
+        ra(stack_a);
     if (ft_strequ(op, "rb"))
-    {    rb(stack_b);}
+        rb(stack_b);
     if (ft_strequ(op, "rr"))
-    {    rr(stack_a, stack_b);}
+        rr(stack_a, stack_b);
     if (ft_strequ(op, "rra"))
-    {    rra(stack_a);}
+        rra(stack_a);
     if (ft_strequ(op, "rrb"))
-    {    rrb(stack_b);}
-    if (ft_strequ(op, "print"))
-    {
-        ft_putendl("stack a");
-        print_list(*stack_a);
-        ft_putendl("stack b");
-        print_list(*stack_b);
-    }
+        rrb(stack_b);
+    if (ft_strequ(op, "rrb"))
+       rrr(stack_a, stack_b);
+    if (ft_strequ(op, "p") || ft_strequ(op, "print") || ft_strequ(op, "ls"))
+        print_ab(*stack_a, *stack_b);
 }
 
 void			ss(t_list **stack_a, t_list **stack_b)
