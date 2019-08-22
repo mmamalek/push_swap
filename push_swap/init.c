@@ -1,5 +1,7 @@
 #include "push_swap.h"
 
+static void scramble(int a[], int s[], int size);
+
 void init(char **av, t_list **list, int size)
 {
     int tmp_array[size];
@@ -15,10 +17,10 @@ void init(char **av, t_list **list, int size)
         array[i] = tmp_array[i];
         i++;
     }
-    print_array(tmp_array, size);
+//    print_array(tmp_array, size);
     sort_array(tmp_array, size);
     scramble(array, tmp_array, size);
-    print_array(array, size);
+//    print_array(array, size);
     array_to_list(array, size, list);
 }
 
