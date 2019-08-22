@@ -23,7 +23,7 @@ int main(int ac, char **av)
                 break;
             else
                 perform_task(input, &stack_a, &stack_b);
-            input = NULL;
+            ft_strdel(&input);
         }
         run_last_test(&stack_a, &stack_b, av);
     }
@@ -36,26 +36,28 @@ static void    perform_task(char *op, t_list **stack_a,t_list **stack_b)
         sa(stack_a);
 	else if (ft_strequ(op, "sb"))
         sb(stack_b);
-    if (ft_strequ(op, "ss"))
+	else if (ft_strequ(op, "ss"))
         ss(stack_a, stack_b);
-    if (ft_strequ(op, "pa"))
+	else if (ft_strequ(op, "pa"))
         pa(stack_a, stack_b);
-    if (ft_strequ(op, "pb"))
+	else if (ft_strequ(op, "pb"))
         pb(stack_a, stack_b);
-    if (ft_strequ(op, "ra"))
+	else if (ft_strequ(op, "ra"))
         ra(stack_a);
-    if (ft_strequ(op, "rb"))
+	else if (ft_strequ(op, "rb"))
         rb(stack_b);
-    if (ft_strequ(op, "rr"))
+	else if (ft_strequ(op, "rr"))
         rr(stack_a, stack_b);
-    if (ft_strequ(op, "rra"))
+	else if (ft_strequ(op, "rra"))
         rra(stack_a);
-    if (ft_strequ(op, "rrb"))
+	else if (ft_strequ(op, "rrb"))
         rrb(stack_b);
-    if (ft_strequ(op, "rrb"))
+	else if (ft_strequ(op, "rrr"))
        rrr(stack_a, stack_b);
-    if (ft_strequ(op, "p") || ft_strequ(op, "print") || ft_strequ(op, "ls"))
+	else if (ft_strequ(op, "p") || ft_strequ(op, "print") || ft_strequ(op, "ls"))
         print_ab(*stack_a, *stack_b);
+	else
+		ft_putendl_fd("Error: Unsupported command", 2);
 }
 
 static void	run_last_test(t_list **a, t_list **b, char **arguments)
