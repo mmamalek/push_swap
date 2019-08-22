@@ -1,39 +1,37 @@
 NAME = checker
 
 SRC  = 	checker.c \
-		list_add_node_last.c \
-		list_add_node_start.c \
-		list_del_node.c \
-		list_delete_top.c \
-		list_delete.c \
-		list_new_node.c \
-		print_list.c \
+		pa.c \
+		pb.c \
+		print_ab.c \
+		ra.c \
+		rb.c \
 		read_list.c \
- 		rotate_down.c \
-		rotate_up.c \
-		swap_top.c \
-		list_len.c \
-		print_ab.c
-
+		rr.c \
+		rra.c \
+		rrb.c \
+		rrr.c \
+		sa.c \
+		sb.c \
+		ss.c
 OBJ  = 	checker.o \
-		list_add_node_last.o \
-		list_add_node_start.o \
-		list_del_node.o \
-		list_delete.o \
-		list_delete_top.o \
-		list_new_node.o \
-		print_list.o \
+		pa.o \
+		pb.o \
+		print_ab.o \
+		ra.o \
+		rb.o \
 		read_list.o \
- 		rotate_down.o \
-		rotate_up.o \
-		swap_top.o \
-		list_len.o \
-		print_ab.o
+		rr.o \
+		rra.o \
+		rrb.o \
+		rrr.o \
+		sa.o \
+		sb.o \
+		ss.o
 
 CC 	=	gcc
 CFLAGS= -Wall -Wextra -Werror
-LIB		= -lft
-LIBDIR	= -L../libft
+LIB		= ../libft/libft.a ../liblist/liblist.a
 GNL  = ../get_next_line/get_next_line.c
 
 all: $(NAME)
@@ -41,7 +39,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@echo creating $(NAME)
 	make libft.a -C ../libft
-	$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIBDIR) $(LIB) -o $(NAME)
+	make liblist.a -C ../liblist
+	$(CC) $(CFLAGS) $(OBJ) $(GNL) $(LIB) -o $(NAME)
 	@echo installing $(NAME) to ~/bin
 	@rm -f ~/bin/$(NAME)
 	@cp $(NAME) ~/bin/
