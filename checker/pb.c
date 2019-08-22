@@ -1,4 +1,4 @@
-#include "checker.c"
+#include "checker.h"
 
 void			pb(t_list **a, t_list **b)
 {
