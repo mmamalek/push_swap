@@ -19,6 +19,7 @@ void			list_add_node_last(t_list **list, t_list *node);
 void			print_list(t_list *list);
 void			list_delete_top(t_list **top);
 int				list_len(t_list *list);
+int				list_is_ascending(t_list *list);
 
 void			swap_top(t_list **top);
 void			rotate_up(t_list **head);
